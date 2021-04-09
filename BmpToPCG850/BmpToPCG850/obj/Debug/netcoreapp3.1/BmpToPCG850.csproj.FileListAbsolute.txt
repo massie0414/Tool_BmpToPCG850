@@ -1,0 +1,13 @@
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\bin\Debug\netcoreapp3.1\BmpToPCG850.exe
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\bin\Debug\netcoreapp3.1\BmpToPCG850.deps.json
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\bin\Debug\netcoreapp3.1\BmpToPCG850.runtimeconfig.json
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\bin\Debug\netcoreapp3.1\BmpToPCG850.runtimeconfig.dev.json
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\bin\Debug\netcoreapp3.1\BmpToPCG850.dll
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\bin\Debug\netcoreapp3.1\BmpToPCG850.pdb
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.csprojAssemblyReference.cache
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.AssemblyInfoInputs.cache
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.AssemblyInfo.cs
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.csproj.CoreCompileInputs.cache
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.dll
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.pdb
+D:\apps_tool\Tool_BmpToPCG850\BmpToPCG850\BmpToPCG850\obj\Debug\netcoreapp3.1\BmpToPCG850.genruntimeconfig.cache
