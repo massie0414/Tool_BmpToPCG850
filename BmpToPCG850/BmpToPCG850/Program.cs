@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace BmpToPCG850
 {
@@ -13,13 +14,16 @@ namespace BmpToPCG850
         const int width = 160;  // TODO 動的にしたい
         const int height = 64;  // TODO 動的にしたい
 
-        const int width_size = 6 * 8;  // 0~160
-        const int height_size = 8;  // 0~8
+        // 出力時のサイズ
+        const int width_size = 5 * 8;  // 0~160
+        const int height_size = 6;  // 0~8
 
         static void Main(string[] args)
         {
 
             int[] ints = new int[100000];
+            List<byte> imageList = new List<byte>();
+            List<byte> maskList = new List<byte>();
 
             // 1バイトずつ読み出し。
             using (BinaryReader w = new BinaryReader(File.OpenRead(@"convert.bmp")))
@@ -69,7 +73,8 @@ namespace BmpToPCG850
                         }
                     }
                 }
-                Console.WriteLine("{");
+                Console.WriteLine("\t{");
+                //Console.Write("{");
                 for (int j = 0; j < height / 8; j++)
                 {
                     Console.Write("\t");
@@ -85,6 +90,16 @@ namespace BmpToPCG850
                             + b[6 + j * 8, width - 1 - i] * 0x40
                             + b[7 + j * 8, width - 1 - i] * 0x80
                             );
+
+                        if (color == 0)
+                        {
+                            imageList.Add((byte)gp[i]);
+                        }
+                        else if (color == 1)
+                        {
+                            maskList.Add((byte)gp[i]);
+                        }
+
                         Console.Write("0x" + gp[i].ToString("X2"));
                         if (i == width - 1)
                         {
@@ -94,6 +109,8 @@ namespace BmpToPCG850
                         {
                             Console.WriteLine(",");
                             Console.Write("\t");
+
+                            //Console.Write(",");
                         }
                         else
                         {
@@ -112,7 +129,32 @@ namespace BmpToPCG850
                         break;
                     }
                 }
-                Console.WriteLine("},");
+                Console.WriteLine("\t},");
+            }
+
+            // ファイル書き込み
+            using (Stream stream = File.OpenWrite("image.dat"))
+            {
+                // streamに書き込むためのBinaryWriterを作成
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    for (int i = 0; i < imageList.Count; i++)
+                    {
+                        writer.Write((byte)imageList[i]);
+                    }
+                }
+            }
+
+            using (Stream stream = File.OpenWrite("mask.dat"))
+            {
+                // streamに書き込むためのBinaryWriterを作成
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    for (int i = 0; i < maskList.Count; i++)
+                    {
+                        writer.Write((byte)maskList[i]);
+                    }
+                }
             }
 
             System.Threading.Thread.Sleep(100000);
